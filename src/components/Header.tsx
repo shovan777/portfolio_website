@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-gray-900">
-              Shovan's Portfolio
+              Shovan&apos;s Portfolio
             </Link>
           </div>
           
