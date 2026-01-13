@@ -86,6 +86,7 @@ const projects: Project[] = [
 
 function ProjectCard({ project }: { project: Project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   useEffect(() => {
     if (project.images && project.images.length > 1) {
@@ -103,7 +104,7 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="relative w-full h-56 bg-gray-200 group-hover:bg-gray-100 transition-colors overflow-hidden shrink-0">
         {project.images && project.images.length > 0 ? (
           <Image
-            src={project.images[currentImageIndex]}
+            src={`${basePath}${project.images[currentImageIndex]}`}
             alt={`${project.title} - Preview ${currentImageIndex + 1}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
